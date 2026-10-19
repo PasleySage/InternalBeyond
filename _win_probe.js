@@ -101,7 +101,9 @@ else {
 
       /* 全目录一致性：本地 Windows\ 逐文件 vs HEAD 树（跳过补丁产物与本地专属目录） */
       out.push('\n== 本地 Windows\\ vs HEAD 树（全目录递归） ==');
-      const SKIP = new Set(['_patches', 'node_modules']);
+      /* .git/.obsidian/.scratch/.workbuddy 是工作区基础设施，不是应用内容——拆分后
+         __dirname 即整个工作区根，不排除会把它们成千上万条全列出来，信号全毁 */
+      const SKIP = new Set(['_patches', 'node_modules', '.git', '.obsidian', '.scratch', '.workbuddy']);
       const LOCAL_EX = new Set(['InternalBeyond.html']); // 补丁产物，预期不一致
       const walk = (dir, rel) => {
         const r = [];

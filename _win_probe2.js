@@ -77,17 +77,25 @@ if (treeMain && treeMain.tree) {
      外来项/已登记本地项 = 不属于本仓库上游内容、但应摆在 Windows\ 下的东西：
      - DLC\：上游 README 明写把 DLC/ 放到 InternalBeyond.html 同级，内容来自另一仓库
        PasleySage/InternalBeyond-Cinema；
-     - _patches\：电脑端本地补丁流水线（docs/adr/0003）。
-     列出来但不叫「多出」，与 _win_sync.js 同一口径。 */
-  const EXTERNAL_PREFIX = ['DLC/', '_patches/'];
+     - _patches\：电脑端本地补丁流水线（docs/adr/0003）；
+     - docs\：本地工作文档（adr/agents/说明书/evidence 等）。
+     列出来但不叫「多出」，与 _win_sync.js 同一口径。
+     .git/.obsidian/.scratch/.workbuddy 是工作区基础设施，不参与比对（拆分后 L＝整个工作区根，
+     不排除会把它们成千上万条全列出来，信号全毁）。 */
+  const EXTERNAL_PREFIX = ['DLC/', '_patches/', 'docs/'];
+  const SKIP_DIRS = new Set(['.git', '.obsidian', '.scratch', '.workbuddy', 'node_modules']);
+  const LOCAL_FILES = new Set(['AGENTS.md', 'CONTEXT.md', '.gitignore',
+    '_check_docs.js', '_check_publish.js', '_check_tables.js', '_fetch_upstream.js', '_probe_lint.js',
+    '_win_check.js', '_win_sync.js', '_win_probe.js', '_win_probe2.js', '_win_digest.js', '_win_html_check.js']);
   const repoPaths = new Set(treeMain.tree.filter(x => x.type === 'blob').map(x => x.path));
   const walk = (d, base) => fs.readdirSync(d).forEach(n => {
     const p = d + '\\' + n;
-    if (fs.statSync(p).isDirectory()) walk(p, base + n + '/');
-    else if (!repoPaths.has(base + n)) {
-      const rel = base + n;
-      out.push((EXTERNAL_PREFIX.some(x => rel.startsWith(x)) ? '    · 外来项（非本仓库，已登记）' : '    ＋ 本地多出 ') + rel);
-    }
+    if (fs.statSync(p).isDirectory()) { if (!SKIP_DIRS.has(n)) walk(p, base + n + '/'); return; }
+    if (repoPaths.has(base + n)) return;
+    const rel = base + n;
+    if (EXTERNAL_PREFIX.some(x => rel.startsWith(x))) out.push('    · 外来项（非本仓库，已登记）' + rel);
+    else if (LOCAL_FILES.has(rel)) out.push('    · 本地工具／记忆件（已登记）' + rel);
+    else out.push('    ＋ 本地多出 ' + rel);
   });
   walk(L.slice(0, -1), '');
 } else out.push('  递归 tree 取不到');

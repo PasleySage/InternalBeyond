@@ -24,8 +24,9 @@ const TARGETS = ['InternalBeyond.html', 'README.md'];
      锚点 f54f45db / blob 5e92e348）。
    - _patches\ —— 电脑端本地补丁流水线（docs/adr/0003 本地补丁模式），
      基线/清单/产物都住在这里，不是上游文件。
+   - docs\ —— 本地工作文档（adr / agents / 说明书 / evidence 等），不是上游文件。
    ⇒ 这些路径不算「本地多出」，但必须单独列出来，免得"本地多了什么"这件事被悄悄吞掉。 */
-const EXTERNAL_PREFIX = ['DLC/', '_patches/'];
+const EXTERNAL_PREFIX = ['DLC/', '_patches/', 'docs/'];
 out.push('\n== 覆盖前 ==');
 TARGETS.forEach(f => {
   const p = L + f;
@@ -87,14 +88,22 @@ if (tree && tree.tree) {
   });
   out.push('  仓库共 ' + blobs.length + ' 个文件：一致 ' + same + '，不同 ' + diff + '，本地缺 ' + miss);
   const repoPaths = new Set(blobs.map(x => x.path));
+  /* 工作区基础设施目录不是应用内容，不参与比对（拆分后 L＝整个工作区根，
+     不排除会把 .git/.scratch 等成千上万条全列成「本地多出」，信号全毁） */
+  const SKIP_DIRS = new Set(['.git', '.obsidian', '.scratch', '.workbuddy', 'node_modules']);
+  /* 合法待在根上的本地文件（工具与记忆件）。未登记的根文件才会被报「本地多出」——
+     留下的临时快照（_win_base.html 等）就该在这里响。 */
+  const LOCAL_FILES = new Set(['AGENTS.md', 'CONTEXT.md', '.gitignore',
+    '_check_docs.js', '_check_publish.js', '_check_tables.js', '_fetch_upstream.js', '_probe_lint.js',
+    '_win_check.js', '_win_sync.js', '_win_probe.js', '_win_probe2.js', '_win_digest.js', '_win_html_check.js']);
   const walk = (d, base) => fs.readdirSync(d).forEach(n => {
     const p = d + '\\' + n;
-    if (fs.statSync(p).isDirectory()) walk(p, base + n + '/');
-    else if (!repoPaths.has(base + n)) {
-      const rel = base + n;
-      if (EXTERNAL_PREFIX.some(x => rel.startsWith(x))) out.push('  · 外来项（非本仓库，已登记）' + rel);
-      else { out.push('  ＋ 本地多出 ' + rel); allOk = false; }
-    }
+    if (fs.statSync(p).isDirectory()) { if (!SKIP_DIRS.has(n)) walk(p, base + n + '/'); return; }
+    if (repoPaths.has(base + n)) return;
+    const rel = base + n;
+    if (EXTERNAL_PREFIX.some(x => rel.startsWith(x))) out.push('  · 外来项（非本仓库，已登记）' + rel);
+    else if (LOCAL_FILES.has(rel)) out.push('  · 本地工具／记忆件（已登记）' + rel);
+    else { out.push('  ＋ 本地多出 ' + rel); allOk = false; }
   });
   walk(L.slice(0, -1), '');
 } else out.push('  递归 tree 取不到');

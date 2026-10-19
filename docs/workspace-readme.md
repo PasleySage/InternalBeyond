@@ -18,11 +18,15 @@ D:\IB-Workspace-Desktop\
 ├─ InternalBeyond.html      在用文件（可由补丁流水线从基线重放）
 ├─ _patches\                补丁引擎 / 清单 pNN-*.js / driver / 测试 / baseline / out
 ├─ _win_*.js                桌面线工具：与上游比对 / 同步 / 变更一览数据链 / 发布自检
+├─ _check_*.js _fetch_upstream.js _probe_lint.js   与手机端同字节的共用自检四件套＋取数
 ├─ DLC\                     嵌套独立 repo（Cinema，父仓已 gitignore；文件在 DLC\DLC\）
 ├─ game\ …                  上游资源
 ├─ CONTEXT.md               术语表（只放词汇）
 ├─ docs\adr\                决策记录（0003 本地补丁模式／0004 拆分）
 ├─ docs\agents\             issue 流程 / 上游收口 / 规格与拆票 / shell 环境
+├─ docs\issues\             跨线外发稿（IB-issue-*-电脑端-已外发）
+├─ docs\evidence\           _win_* 运行产物与证据链（diff / 各探针 txt / README 快照等）
+├─ docs\IB-本体缺陷-复核清单.md   与手机端同字节的共用清单
 ├─ docs\说明书-电脑端.md     电脑端说明书
 ├─ docs\workspace-readme.md 本文件
 └─ .scratch\                本地 effort：spec + issues + 对外稿（不入库）
@@ -79,8 +83,8 @@ node _check_tables.js <稿路径>
 |---|---|
 | **上游更新了** | 说「上游更新了」+ 电脑端，走 skill **`upstream-update-brief`**：先出 HTML+MD 预览 → 同意后再同步 + 复核 |
 | 重放电脑端补丁 | `cd _patches && node _driver.js`（默认写 `out\`；`--out ..\InternalBeyond.html` 写回在用文件） |
-| 看电脑端与上游差异 | `node _win_check.js` / `_win_sync.js`（外来项 `DLC/`、`_patches/` 已登记 `EXTERNAL_PREFIX`，不计入「本地多出」） |
-| 出电脑端变更一览 | `node _win_probe.js` → `_win_probe2.js` → `_win_digest.js`（**必须按序连着跑**，后两个读第一个当场下载的快照） |
+| 看电脑端与上游差异 | `node _win_check.js` / `_win_sync.js`（外来项 `DLC/`、`_patches/`、`docs/` 与本地工具已登记 `EXTERNAL_PREFIX`／`LOCAL_FILES`，不计入「本地多出」；`.git`／`.scratch` 等点目录不参与比对） |
+| 出电脑端变更一览 | `node _win_probe.js` → `_win_probe2.js` → `_win_digest.js`（**必须按序连着跑**，后两个读第一个当场下载的快照；快照与各 txt 产物落在工作区根，归档件在 `docs\evidence\`） |
 | 观影室 DLC | 嵌套仓 `DLC\`：`git -C DLC status`；上游 `Sui-IB/InternalBeyond-Cinema`；⚠️ 上游仓库自身带一层 `DLC\`，文件在 `DLC\DLC\IB-Cinema.js` |
 | 脚本 / 产物索引 | **`_patches\README.md`（补丁台账）**；手机端索引在 `D:\IB-Workspace-Mobile\_工具与产物清单.md` |
 
