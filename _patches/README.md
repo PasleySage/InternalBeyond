@@ -2,7 +2,7 @@
 
 **依据**：`docs\adr\0003-电脑端改用本地补丁模式.md`（2026-09-21 起，电脑端**不再是上游的逐字节纯拷贝**）
 **基线**：上游 `Sui-IB/InternalBeyond` `b0d7919d`（V2.7.5）· `InternalBeyond.html` 2,819,874 B · sha256 `a49fb343e69771e0ebf79d57e4c374c3e5b432db11e988c984cc30fc6eb8cbd6`（旧基线 `f8955fd1`、`9ef2ed12` 留档对照，见 `baseline\`）
-**形态**：引擎（`_engine.js`）+ 清单（`pNN-*.js`）+ 驱动（`_driver.js`）—— **新增补丁只写清单，不要抄脚本、也不要改引擎**（与手机端 `Android\_patch_engine.js` 同一套纪律）
+**形态**：引擎（`_engine.js`）+ 清单（`pNN-*.js`）+ 驱动（`_driver.js`）—— **新增补丁只写清单，不要抄脚本、也不要改引擎**（沿用手机端补丁引擎的同一套纪律；该引擎 2026-10-19 深清理已删）
 
 ---
 
@@ -84,18 +84,18 @@ node _smoke_ui_edge.js             # Edge 界面冒烟（仅系统 Edge，不装
 | p05 | `.scratch\ib-ibm-parity\issues\05-收藏夹.md` | 收藏夹（＋p09：星钮尺寸/描边体例） | 4 | 已实现，待真机验收 | `b0d7919d` |
 | p06 | `.scratch\ib-ibm-parity\issues\06-小助手水水.md` | 小助手（说明书问答层：按内嵌说明书回答 + 替你打开页；回答用 API 独立可选）＋p09（无回复修复 / 去 💧）＋p11（知识源补实＋提示词硬约束）＋p12（bot 气泡接 Markdown 渲染）＋p13（跳转改点击＋列表贴边样式）＋p18（动作系统：[[set:path=value]] 改 IB 实有设置＋[[run:theme]]＋回显/撤销＋「设置清单」）＋p19（对话持久化 ib_helper_hist ≤30 条＋boot 恢复重画＋窗头「清空」＋空态欢迎句＋上下文 slice(-12)）＋p20（IBM 版式＋去禁词） | 2 | 已实现，待真机验收 | `b0d7919d` |
 | p07 | `.scratch\ib-summary-patch\派活-摘要p07.md` | 摘要关思考与真因 | 7 | 已实现，待真机验收 | `b0d7919d` |
-| p08 | `.scratch\ib-ibm-parity\派活-p08-真机缺陷修复.md` | 真机缺陷修复（颜文字面板打不开 / 图标体例 / Edge 冒烟） | 0（改 p04×1/p05×3/p06×2 的 new 侧，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
-| p09 | `.scratch\ib-ibm-parity\派活-p09-水水回复与图标.md` | 真机二批修复（水水无回复 / 星钮尺寸体例 / 悬停星描边 / 去 💧 / 首页无污染断言） | 0（改 p05×3＝P05-1/2/4 new 侧（P05-4 内悬停星）、p06×2＝P06-2 new 侧多处＋P06-1 accept，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
-| p10 | `.scratch\ib-ibm-parity\派活-p10-连通但请求失败.md` | 接口诊断与请求优化（失败可诊断 + 两级探活 + 超时 120s + 响应兼容 + max_tokens 纠正放宽 + 小助手 catch 对齐） | 6（独立清单 p10-接口诊断与请求优化.js；另改 p01 P01-2 new 侧＋p06 P06-2 catch 行） | 已实现，待真机验收 | `b0d7919d` |
-| p11 | `.scratch\ib-ibm-parity\派活-p11-水水指到按钮.md` | 水水指到按钮（知识源补实＋提示词硬约束） | 0（改 p06 P06-2 new 侧 `_wsAMANUAL`/`_wsASYS`，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
-| p12 | `.scratch\ib-ibm-parity\派活-p12-水气泡接Markdown渲染.md` | 水水气泡接 Markdown 渲染（bot 走 `_mdRenderHtml`，异常/缺失/空渲染退 textContent；user 保持 textContent） | 0（改 p06 P06-2 new 侧 `_wsABubble`，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
-| p13 | `.scratch\ib-ibm-parity\派活-p13-跳转改点击与列表贴边.md` | 水水跳转改「点击才去」＋气泡内列表序号贴边样式（删 `_wsASendQ` 自动跳；气泡下出「去<页名> →」跳转键，点击才 navTo＋关窗；`_wsABuild` 追加气泡作用域列表/段落样式） | 0（改 p06 P06-2 new 侧 `_wsASendQ`/`_wsABubble`/`_wsAJumpBtn`/`_wsABuild` 样式，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
-| p14 | `.scratch\ib-ibm-parity\派活-p14-水水入口改右下角.md` | 水水入口改右下角（Guide 标题区「问水水」按钮移除；入口移至右下角 fab-dock 日历左侧，标签 Guide（Cormorant Garamond 衬线斜体）、窗题「小助手」） | 0（改 p06 P06-1/P06-2 new 侧，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
-| p15 | `.scratch\ib-ibm-parity\派活-p15-fab去字贴邻居.md` | 水水 fab 去字贴邻居（删 Guide 标签/mini-title/Cormorant；纯图标＋stroke-width1.5＋aria-hidden；#ws-a-fab 整组 11 条镜像 #cal-mini：基础规则＋::before 光斑 right:1px＋hover/active 底/亮色反转＋>* z-index＋.mini-icon opacity 0.8→1＋svg 取色 var(--silver)/#2a5070；窗题「小助手」不变） | 0（改 p06 P06-2 new 侧，无独立清单） | 已实现，真机 UI 已确认 | `b0d7919d` |
-| p18 | `.scratch\ib-ibm-parity\派活-p18-水水改设置与跳转.md` | 水水动作系统（统一 [[set:path=value]]/[[open:key]]/[[run:name]] 一套管道；改 IB 实有的摘要/Presence/Sing、AI 控制播放器、表情包颜文字、精细文件工具、每 API 十二项、读取范围；逐条回显 ✓旧→新、本会话 undo；「设置清单」本地列现值；run 仅 theme；手机端 ui.*/perms.*/skinReset 拒绝） | 0（改 p06 P06-2 new 侧 `_wsAMANUAL`/`_wsASYS`/`_wsAPAGES`/`_wsAParse`/`_wsASendQ`/样式，无独立清单；新建 `_test_p18_set_act.js`） | 已实现，待真机验收 | `b0d7919d` |
-| p19 | `.scratch\ib-ibm-parity\派活-p19-水水对话持久化与清空.md` | 水水对话持久化（localStorage `ib_helper_hist`，≤30 条，字段 {role,text,acts:[{ok,line}]} 与 IBM 同构）＋boot 恢复重画（气泡＋动作行回显，无撤销/跳转钮）＋窗头「清空」（hist＋undo 栈清空、重画空态）＋空态欢迎句＋上下文 slice(-12) | 0（改 p06 P06-2 new 侧；新建 `_test_p19_hist.js`） | 已实现，待真机验收 | `b0d7919d` |
+| p08 | （派活单未留存；以补丁脚本内注释为准） | 真机缺陷修复（颜文字面板打不开 / 图标体例 / Edge 冒烟） | 0（改 p04×1/p05×3/p06×2 的 new 侧，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
+| p09 | （派活单未留存；以补丁脚本内注释为准） | 真机二批修复（水水无回复 / 星钮尺寸体例 / 悬停星描边 / 去 💧 / 首页无污染断言） | 0（改 p05×3＝P05-1/2/4 new 侧（P05-4 内悬停星）、p06×2＝P06-2 new 侧多处＋P06-1 accept，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
+| p10 | （派活单未留存；以补丁脚本内注释为准） | 接口诊断与请求优化（失败可诊断 + 两级探活 + 超时 120s + 响应兼容 + max_tokens 纠正放宽 + 小助手 catch 对齐） | 6（独立清单 p10-接口诊断与请求优化.js；另改 p01 P01-2 new 侧＋p06 P06-2 catch 行） | 已实现，待真机验收 | `b0d7919d` |
+| p11 | （派活单未留存；以补丁脚本内注释为准） | 水水指到按钮（知识源补实＋提示词硬约束） | 0（改 p06 P06-2 new 侧 `_wsAMANUAL`/`_wsASYS`，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
+| p12 | （派活单未留存；以补丁脚本内注释为准） | 水水气泡接 Markdown 渲染（bot 走 `_mdRenderHtml`，异常/缺失/空渲染退 textContent；user 保持 textContent） | 0（改 p06 P06-2 new 侧 `_wsABubble`，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
+| p13 | （派活单未留存；以补丁脚本内注释为准） | 水水跳转改「点击才去」＋气泡内列表序号贴边样式（删 `_wsASendQ` 自动跳；气泡下出「去<页名> →」跳转键，点击才 navTo＋关窗；`_wsABuild` 追加气泡作用域列表/段落样式） | 0（改 p06 P06-2 new 侧 `_wsASendQ`/`_wsABubble`/`_wsAJumpBtn`/`_wsABuild` 样式，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
+| p14 | （派活单未留存；以补丁脚本内注释为准） | 水水入口改右下角（Guide 标题区「问水水」按钮移除；入口移至右下角 fab-dock 日历左侧，标签 Guide（Cormorant Garamond 衬线斜体）、窗题「小助手」） | 0（改 p06 P06-1/P06-2 new 侧，无独立清单） | 已实现，待真机验收 | `b0d7919d` |
+| p15 | （派活单未留存；以补丁脚本内注释为准） | 水水 fab 去字贴邻居（删 Guide 标签/mini-title/Cormorant；纯图标＋stroke-width1.5＋aria-hidden；#ws-a-fab 整组 11 条镜像 #cal-mini：基础规则＋::before 光斑 right:1px＋hover/active 底/亮色反转＋>* z-index＋.mini-icon opacity 0.8→1＋svg 取色 var(--silver)/#2a5070；窗题「小助手」不变） | 0（改 p06 P06-2 new 侧，无独立清单） | 已实现，真机 UI 已确认 | `b0d7919d` |
+| p18 | （派活单未留存；以补丁脚本内注释为准） | 水水动作系统（统一 [[set:path=value]]/[[open:key]]/[[run:name]] 一套管道；改 IB 实有的摘要/Presence/Sing、AI 控制播放器、表情包颜文字、精细文件工具、每 API 十二项、读取范围；逐条回显 ✓旧→新、本会话 undo；「设置清单」本地列现值；run 仅 theme；手机端 ui.*/perms.*/skinReset 拒绝） | 0（改 p06 P06-2 new 侧 `_wsAMANUAL`/`_wsASYS`/`_wsAPAGES`/`_wsAParse`/`_wsASendQ`/样式，无独立清单；新建 `_test_p18_set_act.js`） | 已实现，待真机验收 | `b0d7919d` |
+| p19 | （派活单未留存；以补丁脚本内注释为准） | 水水对话持久化（localStorage `ib_helper_hist`，≤30 条，字段 {role,text,acts:[{ok,line}]} 与 IBM 同构）＋boot 恢复重画（气泡＋动作行回显，无撤销/跳转钮）＋窗头「清空」（hist＋undo 栈清空、重画空态）＋空态欢迎句＋上下文 slice(-12) | 0（改 p06 P06-2 new 侧；新建 `_test_p19_hist.js`） | 已实现，待真机验收 | `b0d7919d` |
 | p16 | （派活单已删，见 2026-09-24 日志） | 小助手完全遵照 chat 小窗样式（双主题：浅色白玻璃深蓝字＋深色变量路径；禁 `#cfe0ff`/`#9ab`；发送圆钮纸飞机） | 0 | 已实现，已写回 | `b0d7919d` |
-| p20 | `.scratch\ib-ibm-parity\派活-p20-小助手UI还原IBM与去禁词.md` | 小助手 UI 还原 IBM ＋ 全面去禁词（产物 HTML 禁词=0；底部靠停窗＋轻遮罩；窗头文字签/菜单/chips/胶囊输入/圆×；`p06-小助手.js` 改名；你是谁本地直答） | 0（改 p06 P06-2 new 侧＋p10 accept 文案；新建 `_test_p20_ibm_ui.js`） | 已实现，待真机验收 | `b0d7919d` |
+| p20 | （派活单未留存；以补丁脚本内注释为准） | 小助手 UI 还原 IBM ＋ 全面去禁词（产物 HTML 禁词=0；底部靠停窗＋轻遮罩；窗头文字签/菜单/chips/胶囊输入/圆×；`p06-小助手.js` 改名；你是谁本地直答） | 0（改 p06 P06-2 new 侧＋p10 accept 文案；新建 `_test_p20_ibm_ui.js`） | 已实现，待真机验收 | `b0d7919d` |
 | p21 | `.scratch\ib-ibm-parity\issues\07-重新生成.md` | 重新生成：当前会话（主线/话题）最后一条正常 AI 回复出悬停描边键，点击删该条记录＋气泡后按当前上下文再要一版；不重发用户消息、不造假用户行；群聊/发送中/user/系统行·标记行·通话卡/空气泡/非末条不出；连击锁＋占位 loading 双防翻车；全屏与小窗共用同一 document 级懒注入 | 4（独立清单 `p21-重新生成.js`：悬停族追加键、sendChatMessage 放行空文本、跳过用户落库、主 IIFE；新建 `_test_p21_regen.js`） | 已实现，待真机验收 | `b0d7919d` |
 | p22 | `.scratch\ib-bs-split\issues\01-分段气泡收尾拆段.md` | 分段气泡收尾拆段：「分段气泡显示」开时三处路径不拆段——实时收尾 `_wsFinalizeBubble`（全屏+小窗）、小窗历史 `_buildMsgEl` 非全屏分支、小窗 `appendChatBubble`（群聊实时/非流式落定）都只走 `_renderSegments`、不走 `_bsSplit`（全屏历史拆、其余不拆，上游自身不一致；差分 loop 干净基线同红判定上游问题）。三处均按开关改走 `_renderAiContent`（归一 r-text）；P22-4 把分段消息隐藏消息级引用/删除的 CSS 规则从只盖 `#page-chat` 扩到 `#chat-panel`（小窗拆段后双引用，真机发现）；P22-5 段级键 top:5→3 覆盖对齐消息级（消 2px 垂直错位，五键一条线，真机发现）。JS 分支一律开关守卫、关=原句 | 5（独立清单 `p22-分段气泡收尾拆段.js`；`_test_p22_split.js` 17 条：静态 13 + vm 分支 4） | 已实现，待真机复测；loop 五指标 0→6；P22-4 computed style、P22-5 deltaTop=0 已验 | `b0d7919d` |
 

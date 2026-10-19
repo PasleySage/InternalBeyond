@@ -1,0 +1,24 @@
+#!/bin/sh
+# IB 电脑端预提交守栏（2026-10-19 retro S1.3 落地）
+# 内容：_patches 活测试（20 个，约 1-2 分钟）+ _check_docs.js + _probe_lint.js。
+# 注意：_probe_lint.js 的 ctx-ledger effort 节在本仓自动跳过（effort 不在），
+# ⑥__dirname 禁上跳与⑦引用路径存在性照跑。脚本逻辑与输出只用 ASCII。
+# 绕过要用 --no-verify（请说明原因）。
+set -e
+ROOT=$(git rev-parse --show-toplevel)
+cd "$ROOT"
+if command -v node >/dev/null 2>&1; then NODE=node; else NODE="/c/Users/20513/.workbuddy/binaries/node/versions/22.22.2-6/node.exe"; fi
+
+echo "[pre-commit] _patches 活测试 ..."
+cd _patches
+for t in _test_p*.js; do
+  printf '  %s ... ' "$t"
+  if "$NODE" "$t" >/dev/null 2>&1; then echo ok; else echo FAIL; "$NODE" "$t"; exit 1; fi
+done
+cd "$ROOT"
+
+echo "[pre-commit] _check_docs.js ..."
+"$NODE" _check_docs.js
+echo "[pre-commit] _probe_lint.js ..."
+"$NODE" _probe_lint.js
+echo "[pre-commit] 全部通过"

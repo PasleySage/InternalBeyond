@@ -57,6 +57,9 @@ D:\IB-Workspace-Desktop\
 交付 / 提交前按序：
 
 ```bash
+# 以下各项已由 .githooks/pre-commit 在 commit 时自动执行（core.hooksPath=.githooks）；
+# 本块是手工口径——守栏外单独跑某一项、或排查某项失败时用。
+
 # 电脑端补丁（若本轮改了 _patches\）
 cd _patches
 node _driver.js

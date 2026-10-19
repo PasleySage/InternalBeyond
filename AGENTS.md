@@ -42,8 +42,8 @@ Single-context：根 `CONTEXT.md`（术语表，只放词汇、不放实现细�
 
 ### 交付前（与 Code style 配套）
 
-- **Pre-commit**：电脑端补丁跑 `_patches` 的 driver + 测试（`node _driver.js`、`_test_pipeline.js` 及各 `_test_pNN.js`）；对外文稿跑 `_check_publish.js` / `_check_docs.js` / `_check_tables.js`。顺序固定：**临时残留清理 → 测试 → 再提交**。
-- **探针与地图类文档另跑** `_probe_lint.js` —— 查五件机械可判定的事：脚本里的隐藏控制字符、采集器写了却没人读的字段、标题重复、空壳节、**引用悬空**（§N 锚点指向的节不存在／D·Q 标签无定义）。**裸跑即 glob 整个 effort**（`.scratch/**/*.md`＋3 探针＋`CONTEXT.md`，证据/临时文件自动排除）；传路径则只查指定文件。**改完探针或地图必跑**（它拦的是"改完没验"那类错）。
+- **Pre-commit**：本仓已接 `.githooks/pre-commit`（`core.hooksPath=.githooks`，随仓走、每克隆要配一次）——自动跑 `_patches` 的 driver 测试链（20 个 `_test_p*.js`）＋`_check_docs.js`＋`_probe_lint.js`（本仓无 ctx-ledger effort，其 effort 节自动跳过，⑥⑦照跑）；commit 时守栏自动执行，**勿用 `--no-verify` 绕过**（确需绕过先说明原因）。手工口径：电脑端补丁跑 `_patches` 的 driver + 测试（`node _driver.js`、`_test_pipeline.js` 及各 `_test_pNN.js`）；对外文稿跑 `_check_publish.js` / `_check_docs.js` / `_check_tables.js`。顺序固定：**临时残留清理 → 测试 → 再提交**。
+- **探针与地图类文档另跑** `_probe_lint.js` —— 查七件机械可判定的事：脚本里的隐藏控制字符、采集器写了却没人读的字段、标题重复、空壳节、**引用悬空**（§N 锚点指向的节不存在／D·Q 标签无定义）、⑥ **__dirname 上跳**（根级脚本禁位）、⑦ **文档引用路径不存在**（反引号路径存在性）。**裸跑即 glob 整个 effort**（`.scratch/**/*.md`＋3 探针＋`CONTEXT.md`，证据/临时文件自动排除）；传路径则只查指定文件。**改完探针或地图必跑**（它拦的是"改完没验"那类错）。
 - **探针 ≠ 测试**：只打印指标、不含断言的对照页 / 计数脚本不算测试，不能代替 `_test_*.js`。
 - **给用户的数字要有来源**：面向用户给出的任何数字，若来自估算、占位或举例，须在同一屏标注来源与不确定性——**实测／静态／倒推／推断／未测，五级标注**；**不得以表格或图形呈现无来源的数字**——形状合理的假数字会被当结论用，一路传到外发稿。
 - **区间要标来源**：写「system 占 54～91%」这类区间先问一句——全量还是选样？选样的话选了几轮、依据是什么？
