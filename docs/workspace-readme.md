@@ -87,7 +87,7 @@ node _check_tables.js <稿路径>
 ## 本线定位
 
 - **电脑端**：单文件本地打开即用；**无 Pages**。自 `docs\adr\0003` 起为**本地补丁模式**（`_patches\`，基线永不被写）；核对判据＝逐项比补丁台账，不是「文件全等」。
-- **观影室 DLC**（外来）：本地在用版走嵌套仓 `local-work`；与上游 `main` 差 593 B（同版本号 2.6.3 下的上游小更新）。⚠️ PolyForm Noncommercial＋CC BY-NC-SA：推回须留版权行/署名、标「非官方修改版」。
+- **观影室 DLC**（外来）：本地在用版与上游 `main` 逐字节一致（129,266 B，blob `5e92e348`，sha256 `ae249d2b…`）；嵌套仓 `local-work` 当前与 `main` 同点。⚠️ PolyForm Noncommercial＋CC BY-NC-SA：推回须留版权行/署名、标「非官方修改版」。
 
 ## git 绑定（2026-10-19 拆分）
 
