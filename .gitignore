@@ -1,0 +1,12 @@
+# 拆分方案 2026-10-19：本地 effort 与易变会话状态不入库
+node_modules/
+_patches/out/
+.scratch/
+.workbuddy/memory/
+.obsidian/
+DLC/
+# Cinema 是嵌套独立 repo（origin=PasleySage/InternalBeyond-Cinema）
+*.bak
+Thumbs.db
+desktop.ini
+_tmp_*

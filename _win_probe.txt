@@ -1,0 +1,73 @@
+== 本地 D:/InternalBeyond/Windows/ ==
+  InternalBeyond.html   2980095 B　blob 7f5f959392c3c55b0392a47ef7a97a33d80ee882
+  README.md             27777 B　blob 77ac0502566804a18f9037bc852501684cc4b3bb
+
+== 上游 Sui-IB/InternalBeyond ==
+  head = b0d7919d46c7d4bd36a4d13e917a712bd6e70127
+  最近 12 条（新→旧）：
+   b0d7919d  2026-09-27T19:56:54Z  V2.7.5：官端Claude/ChatGPT聊天记录导入
+   f8955fd1  2026-09-25T20:15:48Z  V2.7.4：与手机端的渲染卡片对齐+BUG修复+功能优化
+   45747c0a  2026-09-25T20:01:34Z  V2.7.4：与手机端的渲染卡片对齐+BUG修复+功能优化
+   1c7aff10  2026-09-24T16:37:05Z  V2.7.3：BUG修复/Beyond社交圈重命名
+   95375239  2026-09-22T02:16:38Z  Update README.md
+   9ef2ed12  2026-09-18T15:28:02Z  V2.7.2:bug修复+人格锚定
+   66725d2f  2026-09-17T11:49:26Z  V2.7.1b:添加与修改char消息+记忆检索与手机端同步修改
+   497ca929  2026-09-17T06:58:07Z  V2.7.1:添加与修改char消息+记忆检索与手机端同步修改
+   e58572b5  2026-09-16T09:03:54Z  Add files via upload
+   596084c4  2026-09-16T09:02:43Z  Delete ib-sw.js
+   c1732516  2026-09-16T09:02:08Z  Add files via upload
+   847edbbf  2026-09-16T09:01:17Z  Add files via upload
+  → 基线（argv 显式传入） = b0d7919d
+
+== compare b0d7919d...b0d7919d ==
+  status=identical  ahead_by=0  behind_by=0  total_commits=0
+  commits（旧→新）：
+  files：
+  合计  +0 / −0　文件数 0
+
+== 原始 diff 落盘 _win.diff，0 字符 ==
+
+== trees 权威清单 ==
+  truncated: BASE=false HEAD=false
+  文件数 67 → 67　added 0 · removed 0 · modified 0
+  提交级 stats 累加（非 merge 0 条）：+0 / −0
+
+== 本地 Windows\ vs HEAD 树（全目录递归） ==
+  本地文件（跳过 _patches/node_modules，排除补丁产物）68　不一致 0 · 缺失 0 · 本地多出 1
+   多  DLC/IB-Cinema.js
+
+== 两版 InternalBeyond.html ==
+  BASE 2567225 字符　HEAD 2567225 字符　Δ=0
+  IB_VER         BASE = （无）　HEAD = （无）
+  IB_VER_DATE    BASE = （无）　HEAD = （无）
+  DB_VER         BASE = DB_VER=15　HEAD = DB_VER=15
+  SW cache       BASE = （无）　HEAD = （无）
+  APP_VER        BASE = （无）　HEAD = （无）
+  version        BASE = <title>Internal Beyond</title>　HEAD = <title>Internal Beyond</title>
+  HEAD 里的版本类字串（前 20 个）：
+    v8.5  v3.9  v8.6l  v1.1  v7.36c  v7.52c  v1.173c  v13.672a  v3.3  v3.4h  v2.9a  v1.6  v2.8l  v1.4  v6.8l  v1.5  v3.2  v6.42a  v0.26  v11.6
+  BASE 里的版本类字串（前 20 个）：
+    v8.5  v3.9  v8.6l  v1.1  v7.36c  v7.52c  v1.173c  v13.672a  v3.3  v3.4h  v2.9a  v1.6  v2.8l  v1.4  v6.8l  v1.5  v3.2  v6.42a  v0.26  v11.6
+
+== 归档项与本地补丁锚点复检（上游 HEAD） ==
+  有  诊断面板 _ibGuard
+  无  各步耗时埋点 _ibStepLog
+  无  脱敏 _ibRedact
+  无  VersionError 自愈 ib_verfix
+  无  预遮罩揭幕 _ibVeilOff
+  无  9 秒硬兜底 now-t0>9000
+  有  openDB onblocked
+
+== 上游 HEAD 根目录 vs 本地 Windows/ ==
+  有  IB-icon.ico           仓库 23381　本地 23381 ✓
+  有  InternalBeyond.html   仓库 2819874　本地 2980095 / 仓库 2819874 ⚠
+  有  LICENSE               仓库 2553　本地 2553 ✓
+  有  LICENSES              仓库 -　（目录）
+  有  README.md             仓库 27777　本地 27777 ✓
+  有  bg-canvas.png         仓库 6268353　本地 6268353 ✓
+  有  bg-infernal.jpg       仓库 140901　本地 140901 ✓
+  有  bg-internal.jpg       仓库 137765　本地 137765 ✓
+  有  game                  仓库 -　（目录）
+
+== PasleySage/InternalBeyond 是否存在 ==
+  存在

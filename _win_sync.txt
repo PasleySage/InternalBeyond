@@ -1,0 +1,24 @@
+上游 head = 9ef2ed12e98e4fa0b3319df2b2f08fa2239af78d
+
+== 覆盖前 ==
+  InternalBeyond.html：本地 2712403 B，blob 911ea437
+  README.md：本地 27778 B，blob 532fd0b1
+
+== 下载并覆盖 ==
+  InternalBeyond.html
+    期望 size=2716118  blob=59253773
+    第 1 次成功：2716118 B，blob 59253773 ✓ 与仓库逐字节一致
+  README.md
+    期望 size=27778  blob=532fd0b1
+    第 1 次成功：27778 B，blob 532fd0b1 ✓ 与仓库逐字节一致
+
+== 覆盖后复核 ==
+  ✓  InternalBeyond.html：本地 2716118 B / 仓库 2716118 B，blob 59253773
+  ✓  README.md：本地 27778 B / 仓库 27778 B，blob 532fd0b1
+
+== 其余文件复核（Git Trees recursive，只比 blob） ==
+  仓库共 67 个文件：一致 67，不同 0，本地缺 0
+
+==============================
+结果：全部一致 ✓
+==============================

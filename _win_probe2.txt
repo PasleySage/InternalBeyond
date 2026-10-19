@@ -1,0 +1,198 @@
+== README.md 在各提交上的尺寸 ==
+  66725d2f  27778 B  blob 532fd0b1
+  497ca929  27778 B  blob 532fd0b1
+  e58572b5  27778 B  blob 532fd0b1
+  596084c4  32756 B  blob 626c6f06
+  c1732516  32756 B  blob 626c6f06
+  847edbbf  35503 B  blob a484af00
+  bf423ec7  25870 B  blob 7f890fc4
+  本地        27778 B  blob 532fd0b1
+  → 本地 README 与哪个提交同 = 66725d2f
+  e58572b5 版 README 下载 15750 字符，blob 532fd0b1
+
+== README 差异（本地 vs 仓库 head）：仓库独有 1 行，本地独有 1 行 ==
+  仓库独有前 14 行：
+   + > 🌏 **观影室 /** 以外置 DLC 形式在V2.7.0版本单独发布。（[InternalBeyond-Cinema](https://github.com/Sui-IB/InternalBeyond-Cinema)）。
+  本地独有前 8 行：
+   − > 🌏 **观影室** ：以外置 DLC 形式在V2.7.0版本单独发布。（[InternalBeyond-Cinema](https://github.com/Sui-IB/InternalBeyond-Cinema)）。
+
+== 仓库 README 里的版本/更新段落（head 版） ==
+  [15] > 🌏 **观影室 /** 以外置 DLC 形式在V2.7.0版本单独发布。（[InternalBeyond-Cinema](https://github.com/Sui-IB/InternalBeyond-Cinema)）。
+  [330] - 项目名称、Logo 与作者标识：保留相关权利，不授权冒充官方版本
+  [335] **署名与声明保留**：任何复制、部署、镜像、Fork 或修改版本，均须保留版权行「Copyright © 2025–2026 Sui」与 `LICENSE` 顶部的 Required Notice、`LICENSE` 与 `LICENSES/` 文件、界面内的作者署名（Sui / 水、联系邮箱与原仓库链接）以及指向本仓库的可见链接；修改版须明确标注为非官方
+  [338] 本项目使用 Anthropic Claude (Opus 4.6) 进行开发构建，Anthropic Claude (Fable 5)、Claude (Opus 4.8)、Claude (Sonnet 4.6)、Claude (Opus 5)、ChatGPT (5.6 Sol) 亦参与了编程工作。AI 工具为辅助创作工具，不对项目内容拥有版权。本声明适用于项
+  [342] **本项目官方版本免费提供。** 如果你通过付费方式获得了未经作者授权的副本，请停止传播，并通过上方联系方式获取免费正版。
+
+== Windows 应用内版本痕迹 ==
+  关于/版本 区块          当前版本 | 版本号
+  v\d+\.\d+ 形式      v8.5 | v3.9 | v8.6 | v1.1 | v7.36 | v7.52 | v1.173 | V12.44 | v13.672 | V8.889
+  CACHE/DB 版本常量     DB_VER=15
+
+== 目录一致性（递归，只比文件 blob） ==
+  LICENSES/：仓库 4 个文件，一致 4，不同 0，本地缺 0
+  game/：仓库 56 个文件，一致 56，不同 0，本地缺 0
+    · 外来项（非本仓库，已登记）DLC/IB-Cinema.js
+    · 外来项（非本仓库，已登记）_patches/baseline/InternalBeyond-9ef2ed12.html
+    · 外来项（非本仓库，已登记）_patches/baseline/InternalBeyond-f8955fd1.html
+    · 外来项（非本仓库，已登记）_patches/node_modules/.bin/playwright-core
+    · 外来项（非本仓库，已登记）_patches/node_modules/.bin/playwright-core.cmd
+    · 外来项（非本仓库，已登记）_patches/node_modules/.bin/playwright-core.ps1
+    · 外来项（非本仓库，已登记）_patches/node_modules/.package-lock.json
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/install_media_pack.ps1
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/install_webkit_wsl.ps1
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_chrome_beta_linux.sh
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_chrome_beta_mac.sh
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_chrome_beta_win.ps1
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_chrome_stable_linux.sh
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_chrome_stable_mac.sh
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_chrome_stable_win.ps1
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_msedge_beta_linux.sh
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_msedge_beta_mac.sh
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_msedge_beta_win.ps1
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_msedge_dev_linux.sh
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_msedge_dev_mac.sh
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_msedge_dev_win.ps1
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_msedge_stable_linux.sh
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_msedge_stable_mac.sh
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/bin/reinstall_msedge_stable_win.ps1
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/browsers.json
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/cli.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/index.d.ts
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/index.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/index.mjs
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/bootstrap.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/coreBundle.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/entry/cliDaemon.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/entry/dashboardApp.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/entry/mcp.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/entry/oopBrowserDownload.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/package.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/server/chromium/appIcon.png
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/server/electron/loader.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/serverRegistry.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/serverRegistry.js.LICENSE
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/cli-client/channelSessions.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/cli-client/cli.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/cli-client/help.json
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/cli-client/minimist.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/cli-client/output.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/cli-client/program.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/cli-client/registry.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/cli-client/session.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/dashboard/appIcon.png
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/element-attributes.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/playwright-tests.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/request-mocking.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/running-code.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/session-management.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/storage-state.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/test-generation.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/tracing.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/video-recording.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-cli/SKILL.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/gallery-spec.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/migration.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/react.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/typing.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/vue.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/SKILL.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/skills/playwright-trace/SKILL.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/utils/extension.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/tools/utils/socketConnection.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/utilsBundle.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/utilsBundle.js.LICENSE
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/assets/codeMirrorModule--QdMvsKi.css
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/assets/codeMirrorModule-CQ8RZGBm.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/assets/codicon-DCmgc-ay.ttf
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/assets/firefox-1bWoP6pv.svg
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/assets/firefox-beta-k3eOH_eK.svg
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/assets/firefox-nightly-Cp5nfeDT.svg
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/assets/index-AwgwcYie.css
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/assets/index-hRvO4yU2.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/assets/safari-na3_-uQk.svg
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/index.html
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/dashboard/playwright-logo.svg
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/htmlReport/index.html
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/htmlReport/report.css
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/htmlReport/report.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/recorder/assets/codeMirrorModule--QdMvsKi.css
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/recorder/assets/codeMirrorModule-CVQWJZAA.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/recorder/assets/codicon-DCmgc-ay.ttf
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/recorder/assets/index-BZpYJZ-P.css
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/recorder/assets/index-hrlLqLtq.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/recorder/index.html
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/assets/codeMirrorModule-BbkfBe3n.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/assets/defaultSettingsView-Ds6CBOo0.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/assets/urlMatch-L3liM589.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/assets/xtermModule-DywYcAf8.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/codeMirrorModule.-QdMvsKi.css
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/codicon.DCmgc-ay.ttf
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/defaultSettingsView.Bqk9acqE.css
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/index.B4cLoZK3.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/index.B_TqY17P.css
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/index.html
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/manifest.webmanifest
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/snapshot.B_Jk1wbt.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/snapshot.html
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/sw.bundle.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/uiMode.CU5KtEkS.js
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/uiMode.CyMfwkXJ.css
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/uiMode.html
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/vite/traceViewer/xtermModule.kHJ-D0s7.css
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/webp_codec.LICENSE
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/webp_codec.wasm
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/lib/xdg-open
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/LICENSE
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/NOTICE
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/package.json
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/README.md
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/ThirdPartyNotices.txt
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/types/protocol.d.ts
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/types/structs.d.ts
+    · 外来项（非本仓库，已登记）_patches/node_modules/playwright-core/types/types.d.ts
+    · 外来项（非本仓库，已登记）_patches/out/InternalBeyond.patched.html
+    · 外来项（非本仓库，已登记）_patches/out/_自检报告.md
+    · 外来项（非本仓库，已登记）_patches/p01-连接测试.js
+    · 外来项（非本仓库，已登记）_patches/p02-AI控制播放器.js
+    · 外来项（非本仓库，已登记）_patches/p03-精细文件工具.js
+    · 外来项（非本仓库，已登记）_patches/p04-表情包与颜文字.js
+    · 外来项（非本仓库，已登记）_patches/p05-收藏夹.js
+    · 外来项（非本仓库，已登记）_patches/p06-小助手.js
+    · 外来项（非本仓库，已登记）_patches/p07-摘要关思考与真因.js
+    · 外来项（非本仓库，已登记）_patches/p10-接口诊断与请求优化.js
+    · 外来项（非本仓库，已登记）_patches/p21-重新生成.js
+    · 外来项（非本仓库，已登记）_patches/package-lock.json
+    · 外来项（非本仓库，已登记）_patches/package.json
+    · 外来项（非本仓库，已登记）_patches/README.md
+    · 外来项（非本仓库，已登记）_patches/_driver.js
+    · 外来项（非本仓库，已登记）_patches/_engine.js
+    · 外来项（非本仓库，已登记）_patches/_smoke_controls.js
+    · 外来项（非本仓库，已登记）_patches/_smoke_ui_edge.js
+    · 外来项（非本仓库，已登记）_patches/_test_p01_ping.js
+    · 外来项（非本仓库，已登记）_patches/_test_p02_music.js
+    · 外来项（非本仓库，已登记）_patches/_test_p03_fine.js
+    · 外来项（非本仓库，已登记）_patches/_test_p04_sticker.js
+    · 外来项（非本仓库，已登记）_patches/_test_p05_fav.js
+    · 外来项（非本仓库，已登记）_patches/_test_p06_water.js
+    · 外来项（非本仓库，已登记）_patches/_test_p07_summary.js
+    · 外来项（非本仓库，已登记）_patches/_test_p08_kp.js
+    · 外来项（非本仓库，已登记）_patches/_test_p10_api_diag.js
+    · 外来项（非本仓库，已登记）_patches/_test_p11_answer.js
+    · 外来项（非本仓库，已登记）_patches/_test_p12_md.js
+    · 外来项（非本仓库，已登记）_patches/_test_p13_jump.js
+    · 外来项（非本仓库，已登记）_patches/_test_p13_list.js
+    · 外来项（非本仓库，已登记）_patches/_test_p16_ws_a_skin.js
+    · 外来项（非本仓库，已登记）_patches/_test_p18_set_act.js
+    · 外来项（非本仓库，已登记）_patches/_test_p19_hist.js
+    · 外来项（非本仓库，已登记）_patches/_test_p20_ibm_ui.js
+    · 外来项（非本仓库，已登记）_patches/_test_p21_regen.js
+    · 外来项（非本仓库，已登记）_patches/_test_pipeline.js
+    · 外来项（非本仓库，已登记）_patches/真机验收-清单.md
+
+== Windows 版 _ibGuard 的真实身份（避免与手机端归档项混淆） ==
+  _ibGuardCheck 定义处上下文：
+  …ibRenderGuardPanel(); } async function _ibGuardCheck(){ try{ var la=null;try{la=localStorage.getItem('ib_lastActive')}catch(e){} if(!la)return;/* 没有历史痕迹 → 真·首次使用 */ var resetAt=0;try{resetAt=parseInt(localStorage.getItem('ib_resetAt'))||0}catch(e){} if(Date.now()-resetAt<15*60000)return;/* 刚主动重置过，属预期内的空 */ var v=await _ibVitals(); if(v.total>0){try{localStorage.removeItem('ib_guardMuted')}catch(e){}return} var muted='';try{muted=localStorage.getItem('ib_guardMuted')||''}catch(e){} if(muted)return; _ibShowGuardOverlay(); }catch(e){} } function _ibShowGuardOverlay(){ if(document.getElementById('ib-guard-overlay'))return; _ibGuardShown=true; var ov=document.createElement('div');ov.id='ib-guard-overlay'; ov.innerHTML='<div class="ibg-card">' +'<div class="ibg-title">检测到异常：数据库清空</div>' +'<div class="ibg-text">这台浏览器留有本站的历史使用痕迹，但整站数据为空。可能刚刚发生了浏览器层面的数据清除（磁盘告急触发的存储回收 / 数据库损坏自愈重建）…
+
+  相关开关/键：ib-guard-overlay  ib_guardMuted  _ibAutoBakOn  _ibFsSyncNow  ib_lastActive

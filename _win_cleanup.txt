@@ -1,0 +1,10 @@
+deleted _brief_v272.txt（5592 B）
+deleted _win_base.html（2712403 B）
+deleted _win_head.html（2716118 B）
+--- 保留 ---
+在 _win.diff
+在 _win_probe.txt
+在 _win_probe2.txt
+在 _win_check.txt
+在 _win_html_check.txt
+在 _brief_v272_u8.txt
