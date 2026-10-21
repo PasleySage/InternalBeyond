@@ -18,7 +18,8 @@ D:\IB-Workspace-Desktop\
 ├─ InternalBeyond.html      在用文件（可由补丁流水线从基线重放）
 ├─ _patches\                补丁引擎 / 清单 pNN-*.js / driver / 测试 / baseline / out
 ├─ _win_*.js                桌面线工具：与上游比对 / 同步 / 变更一览数据链 / 发布自检
-├─ _check_*.js _fetch_upstream.js _probe_lint.js   与手机端同字节的共用自检四件套＋取数
+├─ _check_*.js _fetch_upstream.js   三项自检＋上游取数（共四个文件；2026-10-21 实测与手机端同字节）
+├─ _probe_lint.js                   结构 lint（与手机端已分叉，两端独立维护，勿互抄）
 ├─ DLC\                     嵌套独立 repo（Cinema，父仓已 gitignore；文件在 DLC\DLC\）
 ├─ game\ …                  上游资源
 ├─ CONTEXT.md               术语表（只放词汇）
@@ -30,6 +31,8 @@ D:\IB-Workspace-Desktop\
 ├─ docs\workspace-readme.md 本文件
 └─ .scratch\                本地 effort：spec + issues + 对外稿（不入库）
 ```
+
+完整目录树（带注释，由根目录 `_gen_tree.js` 生成，结构有变时重跑）见 `docs/workspace-tree.md`。
 
 **两层产品逻辑（电脑端）**：应用本体是单文件交付物；可重复的改动一律落在 `_patches\`（清单＝数据、引擎＝代码），从**干净基线**重放，不直接手改在用文件当唯一真相。
 
